@@ -1,0 +1,28 @@
+{
+  "name": "255kb",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Repository for my personal website at 255kb.com",
+  "scripts": {
+    "start": "http-server -a localhost -p 7000 -c-1 ."
+  },
+  "author": {
+    "name": "Guillaume Monnet",
+    "email": "hi@guillaumemonnet.com",
+    "url": "https://255kb.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/255kb/255kb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/255kb/255kb/issues"
+  },
+  "homepage": "https://255kb.com",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-compile-handlebars": "^0.6.1",
+    "http-server": "^0.9.0"
+  }
+}
