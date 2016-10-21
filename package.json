@@ -4,7 +4,7 @@
   "private": true,
   "description": "Repository for my personal website at 255kb.com",
   "scripts": {
-    "start": "http-server -a localhost -p 7000 -c-1 ."
+    "start": "http-server -a localhost -p 7000 -c-1 ./build"
   },
   "author": {
     "name": "Guillaume Monnet",
