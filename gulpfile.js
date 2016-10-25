@@ -2,6 +2,8 @@ let fs = require('fs');
 let path = require('path');
 let merge = require('merge-stream');
 let gulp = require('gulp');
+let concat = require('gulp-concat');
+let less = require('gulp-less');
 let handlebars = require('gulp-compile-handlebars');
 let rename = require('gulp-rename');
 let cleanCSS = require('gulp-clean-css');
@@ -38,6 +40,7 @@ gulp.task('compile', function () {
     if (pageConfig.languages) {
       pageConfig.languages.forEach(function (pageLanguage) {
         let pageData = {
+          currentLang: pageLanguage,
           texts: pageTexts[pageLanguage]
         };
 
@@ -52,6 +55,7 @@ gulp.task('compile', function () {
       return languageCompilationTasks;
     } else {
       let pageData = {
+        currentLang: 'en',
         texts: pageTexts
       };
 
@@ -59,7 +63,6 @@ gulp.task('compile', function () {
         .pipe(handlebars(pageData, handlebarsOptions))
         .pipe(rename('index.html'))
         .pipe(gulp.dest(buildPath + page)));
-
     }
   });
 
@@ -67,9 +70,11 @@ gulp.task('compile', function () {
 });
 
 gulp.task('minify-css', function () {
-  return gulp.src(sourcePath + 'style/*.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest(buildPath + 'style'));
+    return gulp.src([sourcePath + 'style/vendor/*.css', sourcePath + 'style/*.less'])
+    .pipe(less())
+    .pipe(cleanCSS())
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest(buildPath + 'css'));
 });
 
 gulp.task('watch', ['compile', 'minify-css'], function () {
