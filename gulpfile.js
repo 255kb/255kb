@@ -70,7 +70,7 @@ gulp.task('compile', function () {
 });
 
 gulp.task('build-css', function () {
-    return gulp.src([sourcePath + 'style/vendor/bulma.sass', sourcePath + 'style/style.scss'])
+    return gulp.src([sourcePath + 'style/build.scss'])
     .pipe(sass())
     .pipe(cleanCSS())
     .pipe(concat('style.css'))
