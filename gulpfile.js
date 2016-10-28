@@ -79,5 +79,5 @@ gulp.task('minify-css', function () {
 
 gulp.task('watch', ['compile', 'minify-css'], function () {
   gulp.watch(sourcePath + '**/*.hbs', ['compile']);
-  gulp.watch(sourcePath + '**/*.css', ['minify-css']);
+  gulp.watch([sourcePath + '**/*.css', sourcePath + '**/*.less'], ['minify-css']);
 });
