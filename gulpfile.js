@@ -3,7 +3,7 @@ let path = require('path');
 let merge = require('merge-stream');
 let gulp = require('gulp');
 let concat = require('gulp-concat');
-let less = require('gulp-less');
+let sass = require('gulp-sass');
 let handlebars = require('gulp-compile-handlebars');
 let rename = require('gulp-rename');
 let cleanCSS = require('gulp-clean-css');
@@ -69,15 +69,15 @@ gulp.task('compile', function () {
   return merge(pagesTasks);
 });
 
-gulp.task('minify-css', function () {
-    return gulp.src([sourcePath + 'style/vendor/*.css', sourcePath + 'style/*.less'])
-    .pipe(less())
+gulp.task('build-css', function () {
+    return gulp.src([sourcePath + 'style/vendor/bulma.sass', sourcePath + 'style/style.scss'])
+    .pipe(sass())
     .pipe(cleanCSS())
     .pipe(concat('style.css'))
     .pipe(gulp.dest(buildPath + 'css'));
 });
 
-gulp.task('watch', ['compile', 'minify-css'], function () {
+gulp.task('watch', ['compile', 'build-css'], function () {
   gulp.watch(sourcePath + '**/*.hbs', ['compile']);
-  gulp.watch([sourcePath + '**/*.css', sourcePath + '**/*.less'], ['minify-css']);
+  gulp.watch([sourcePath + '**/*.scss', sourcePath + '**/*.sass'], ['build-css']);
 });
