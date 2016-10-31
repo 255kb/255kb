@@ -8,10 +8,12 @@ let handlebars = require('gulp-compile-handlebars');
 let rename = require('gulp-rename');
 let cleanCSS = require('gulp-clean-css');
 
-let domain = 'https://255kb.com/';
 let sourcePath = './src/';
 let buildPath = './build/';
 let pagesPath = './src/pages/';
+
+//load main config
+let mainConfig = require(sourcePath + 'main_config.json');
 
 let getPages = function (dir) {
   return fs.readdirSync(dir)
@@ -43,7 +45,7 @@ gulp.task('compile', function () {
       pageConfig.languages.forEach(function (pageLanguage) {
         let pageData = {
           currentLang: pageLanguage,
-          currentAbsoluteUrl: `${domain}${page}/${pageLanguage}/`,
+          currentAbsoluteUrl: `${mainConfig.domain}${page}/${pageLanguage}/`,
           texts: pageTexts[pageLanguage]
         };
 
@@ -59,7 +61,7 @@ gulp.task('compile', function () {
     } else {
       let pageData = {
         currentLang: 'en',
-        currentAbsoluteUrl: (page === '.') ? domain: `${domain}${page}/`,//if root index no page
+        currentAbsoluteUrl: (page === '.') ? mainConfig.domain: `${mainConfig.domain}${page}/`,//if root index no page
         texts: pageTexts
       };
 
