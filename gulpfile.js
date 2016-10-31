@@ -8,6 +8,7 @@ let handlebars = require('gulp-compile-handlebars');
 let rename = require('gulp-rename');
 let cleanCSS = require('gulp-clean-css');
 
+let domain = 'https://255kb.com/';
 let sourcePath = './src/';
 let buildPath = './build/';
 let pagesPath = './src/pages/';
@@ -37,10 +38,12 @@ gulp.task('compile', function () {
     let pageConfig = require(pagesPath + page + '/config.json');
     let languageCompilationTasks = [];
 
+    //if page has multiple languages
     if (pageConfig.languages) {
       pageConfig.languages.forEach(function (pageLanguage) {
         let pageData = {
           currentLang: pageLanguage,
+          currentAbsoluteUrl: `${domain}${page}/${pageLanguage}/`,
           texts: pageTexts[pageLanguage]
         };
 
@@ -56,6 +59,7 @@ gulp.task('compile', function () {
     } else {
       let pageData = {
         currentLang: 'en',
+        currentAbsoluteUrl: (page === '.') ? domain: `${domain}${page}/`,//if root index no page
         texts: pageTexts
       };
 
