@@ -30,7 +30,7 @@ gulp.task('compile', function () {
     batch: [sourcePath + 'partials'],
     helpers: {
       text: function (key) {
-        return this.texts[key];
+        return this.texts[key] || key;
       }
     }
   };
@@ -84,6 +84,6 @@ gulp.task('build-css', function () {
 });
 
 gulp.task('watch', ['compile', 'build-css'], function () {
-  gulp.watch(sourcePath + '**/*.hbs', ['compile']);
+  gulp.watch([sourcePath + '**/*.hbs', sourcePath + '**/*.json'], ['compile']);
   gulp.watch([sourcePath + '**/*.scss', sourcePath + '**/*.sass'], ['build-css']);
 });
