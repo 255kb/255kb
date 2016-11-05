@@ -18,7 +18,7 @@ gulp.task('compile', function () {
 
   let pages = fs.readdirSync(pagesPath)
     .filter(function (file) {
-      return fs.statSync(path.join(dir, file)).isDirectory();
+      return fs.statSync(path.join(pagesPath, file)).isDirectory();
     });
   //add index page
   pages.push('.');
