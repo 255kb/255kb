@@ -12,10 +12,11 @@
     background-size: cover;
   }
 }
-.image {
-  &--bottom-margin {
-    margin-bottom: 20px;
-  }
+.is-hollow {
+  background-color: transparent;
+}
+.content a:not(.button) {
+  border: none;
 }
 
 /* mixins */
@@ -40,6 +41,40 @@
     @include underlined();
   }
 }
+.title--italic {
+  font-style: italic;
+}
+
+.image {
+  &--bottom-margin {
+    margin-bottom: 20px;
+  }
+
+  &--border {
+    border: 1px solid #d8d8d8;
+  }
+}
+
+.text--highlight {
+  color: $link;
+}
+
+.button {
+  &--link {
+      color: $text;
+    &:hover {
+      color: $text;
+    }
+  }
+
+  &--android, &--android:hover {
+    color: #8bc349;
+  }
+
+  &--ios, &--ios:hover {
+    color: #000;
+  }
+}
 
 .color-inverted {
   color: $custom-main-color-inverted;
@@ -61,8 +96,116 @@ figure.image.image--centered {
   margin-right: auto;
 }
 
-.tagline {
-  font-style: italic;
+
+footer.section {
+  background-color: $custom-footer-background-color;
+
+  a {
+    color: lighten($custom-link-color-lighter, 30%);
+
+    &:hover {
+    color: lighten($custom-link-color-lighter, 20%);
+    }
+  }
+}
+
+.tag {
+  margin-bottom: 4px;
+
+  &__php {
+    color: #000;
+    background-color: #777bb4;
+  }
+
+  &__aws {
+    color: #000;
+    background-color: #f8b20c;
+  }
+
+  &__mysql {
+    background-color: #fff;
+    &--1 {
+      color: #517e9a;
+    }
+    &--2 {
+      color: #f8900c;
+    }
+  }
+
+  &__java {
+    color: #fff;
+    background-color: #f80000;
+  }
+
+  &__js {
+    color: #fff;
+    background-color: #f1bf26;
+  }
+
+  &__less {
+    color: #fff;
+    background-color: #1d365d;
+  }
+
+  &__html {
+    color: #fff;
+    background-color: #F1672C;
+  }
+
+  &__css {
+    color: #fff;
+    background-color: #30A9DC;
+  }
+
+  &__angular {
+    color: #F2F2F2;
+    background-color: #DD1B16;
+  }
+
+  &__meteor {
+    color: #EA5353;
+    background-color: #2A2A2E;
+  }
+
+  &__jquery {
+    color: #fff;
+    background-color: #0769AD;
+  }
+
+  &__mongo {
+    background-color: #402817;
+    &--1 {
+      color: #fff;
+    }
+    &--2 {
+      color: #EAD696;
+    }
+  }
+
+  &__bootstrap {
+    color: #fff;
+    background-color: #5A4080;
+  }
+
+  &__android {
+    color: #8bc349;
+    background-color: #fff;
+  }
+
+  &__ios {
+    color: #000;
+    background-color: #fff;
+  }
+
+  &__redis {
+    color: #505153;
+    background-color: #fff;
+  }
+
+  &__firebase {
+    color: #404040;
+    background-color: #ffa701;
+  }
 }
 
 /* Icon font */

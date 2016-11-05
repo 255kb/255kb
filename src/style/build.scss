@@ -4,6 +4,7 @@ $custom-main-color-inverted: #f4fdff;
 $custom-link-color: #2aafd0;
 $custom-link-color-lighter: lighten($custom-link-color, 15%);
 $custom-background-color: #f5fcff;
+$custom-footer-background-color: #1f1f1f;
 
 // Override Bulma variables
 $family-sans-serif: 'Droid Sans', sans-serif;
@@ -27,6 +28,8 @@ $link-visited: darken($custom-link-color-lighter, 10%);
 @import "vendor/sass/layout/hero.sass";
 @import "vendor/sass/layout/section.sass";
 @import "vendor/sass/elements/image.sass";
+@import "vendor/sass/elements/content.sass";
+@import "vendor/sass/elements/button.sass";
 @import "vendor/sass/elements/title.sass";
 @import "vendor/sass/elements/other.sass";
 @import "style";
