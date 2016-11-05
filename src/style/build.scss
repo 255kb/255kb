@@ -1,8 +1,9 @@
 //custom variables
 $custom-main-color: #13282E;
 $custom-main-color-inverted: #f4fdff;
-$custom-link-color: #51b2ca;
-$custom-background-color: #fbfbfb;
+$custom-link-color: #2aafd0;
+$custom-link-color-lighter: lighten($custom-link-color, 15%);
+$custom-background-color: #f5fcff;
 
 // Override Bulma variables
 $family-sans-serif: 'Droid Sans', sans-serif;
@@ -15,9 +16,9 @@ $text: lighten($custom-main-color, 20%);
 $text-light: lighten($custom-main-color, 30%);
 $text-strong: lighten($custom-main-color, 10%);
 
-$link: $primary !default;
-$link-hover: darken($primary, 10%);
-$link-visited: darken($primary, 10%);
+$link: $custom-link-color-lighter !default;
+$link-hover: darken($custom-link-color-lighter, 10%);
+$link-visited: darken($custom-link-color-lighter, 10%);
 
 // Imports
 @import "vendor/sass/utilities/_all.sass";
