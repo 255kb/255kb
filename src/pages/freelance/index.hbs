@@ -1,53 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <base href="/">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guillaume Monnet - Freelance full-stack web developer in Luxembourg</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="I am a freelance full-stack web developer based in Luxembourg. I create efficient, interactive and ergonomic services, web and mobile apps, by using the latest technologies.">
-  <link href="/css/style.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <link rel="canonical" href="https://255kb.com/freelance/en/">
-  <link rel="author" href="https://www.google.com/+GuillaumeMonnet">
-  <link rel="publisher" href="https://www.google.com/+GuillaumeMonnet">
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-7759211-9', 'auto');
-    ga('send', 'pageview');
-  </script>
-</head>
-
-<body>
+{{> header}}
 
 <section class="hero hero--background is-medium has-text-centered">
   <div class="hero-body">
@@ -55,8 +6,8 @@
       <figure class="image is-128x128 image--centered author__img-container">
         <img src="/assets/gm.jpg" class="author__img">
       </figure>
-      <h1 class="title title--big title--underlined color-inverted is-3">Guillaume Monnet</h1>
-      <h2 class="title is-5 color-inverted">Freelance full-stack web developer<br>based in Luxembourg</h2>
+      <h1 class="title title--big title--underlined color-inverted is-3">{{text 'authorName'}}</h1>
+      <h2 class="title is-5 color-inverted">{{{text 'authorFunction'}}}</h2>
     </div>
   </div>
 </section>
@@ -64,7 +15,7 @@
 <div class="section has-text-centered">
   <div class="columns">
     <div class="column is-offset-1 is-10">
-      <h3 class="title title--big is-5 title--italic">I create <span class="text--highlight">efficient</span>, <span class="text--highlight">interactive</span> and <span class="text--highlight">ergonomic</span> services, web and mobile apps,<br>by using the latest technologies.</h3>
+      <h3 class="title title--big is-5 title--italic">{{{text 'tagline'}}}</h3>
     </div>
   </div>
 </div>
@@ -75,8 +26,8 @@
       <figure class="image is-128x128 image--centered image--bottom-margin">
         <img src="/assets/desc1.png">
       </figure>
-      <h4 class="title title--big is-5">Development</h4>
-      <p>A good website has to be adaptive and reliable. This is why my productions work perfectly at all time, thanks to a dedicated respect of all online best practices.</p>
+      <h4 class="title title--big is-5">{{text 'column1Title'}}</h4>
+      <p>{{{text 'column1Desc'}}}</p>
     </div>
   </div>
   <div class="column has-text-centered">
@@ -84,8 +35,8 @@
       <figure class="image is-128x128 image--centered image--bottom-margin">
         <img src="/assets/desc2.png">
       </figure>
-      <h4 class="title title--big is-5">Web Design</h4>
-      <p>Great companies adapt to their customers. Did yours go mobile? So should your service. I strive to create ergonomic websites that automatically adapt to any device.</p>
+      <h4 class="title title--big is-5">{{text 'column2Title'}}</h4>
+      <p>{{{text 'column2Desc'}}}</p>
     </div>
   </div>
   <div class="column has-text-centered">
@@ -93,22 +44,22 @@
       <figure class="image is-128x128 image--centered image--bottom-margin">
         <img src="/assets/desc3.png">
       </figure>
-      <h4 class="title title--big is-5">Optimization</h4>
-      <p>From fast loading pages to a great ranking on Google, every detail counts. The websites I create are perfectly optimized, and hosted on blazing fast servers.</p>
+      <h4 class="title title--big is-5">{{text 'column3Title'}}</h4>
+      <p>{{{text 'column3Desc'}}}</p>
     </div>
   </div>
 </div>
 
 <div class="section has-text-centered">
-  <h4 class="title title--medium title--underlined is-5">My Latest Projects</h4>
+  <h4 class="title title--medium title--underlined is-5">{{text 'projectsTitle'}}</h4>
 </div>
 
 <div class="section">
   <div class="columns">
     <div class="column is-offset-1 is-6">
-      <h4 class="title title--big is-5">Sneepets</h4>
+      <h4 class="title title--big is-5">{{text 'project1Title'}}</h4>
       <div class="content">
-        <p>Sneepets is a social network dedicated to pets. I developed everything from the website to the mobile applications for Android and iOS. I also carry out the deployment and the daily management of the servers and databases.</p>
+        <p>{{{text 'project1Desc'}}}</p>
         <p>
           <span class="tag tag__php">PHP</span>
           <span class="tag tag__html">HTML5</span>
@@ -139,9 +90,9 @@
 <div class="section">
   <div class="columns">
     <div class="column is-offset-1 is-6">
-      <h4 class="title title--big is-5">World Needs Heroes</h4>
+      <h4 class="title title--big is-5">{{text 'project2Title'}}</h4>
       <div class="content">
-        <p>World Needs Heroes is a side-project made with AngularJS for the video game Overwatch. This service allows players to share videos of their best in-game performances and find the most popular ones.</p>
+        <p>{{{text 'project2Desc'}}}</p>
         <p>
           <span class="tag tag__angular">AngularJS 1</span>
           <span class="tag tag__html">HTML5</span>
@@ -166,9 +117,9 @@
 <div class="section">
   <div class="columns">
     <div class="column is-offset-1 is-6">
-      <h4 class="title title--big is-5">Worldwide Trending Videos</h4>
+      <h4 class="title title--big is-5">{{text 'project3Title'}}</h4>
       <div class="content">
-        <p>Worldwide Trending Videos is a side-project made with AngularJS and using Youtube's API. This service allows to find trending videos on Youtube and filter them by countries and categories.</p>
+        <p>{{{text 'project3Desc'}}}</p>
         <p>
           <span class="tag tag__angular">AngularJS 1</span>
           <span class="tag tag__html">HTML5</span>
@@ -191,9 +142,9 @@
 </div>
 
 <div class="section has-text-centered">
-  <h4 class="title title--medium title--underlined is-5">Contact me</h4>
+  <h4 class="title title--medium title--underlined is-5">{{text 'contactTitle'}}</h4>
   <div class="content">
-    <p>I am available and always interested to work on great projects. Do not hesitate to contact me!</p>
+    <p>{{{text 'contactDesc'}}}</p>
     <p>
       <a href="mailto:hi@255kb.com" target="_blank"><span class="icon-email" title="Email"></span> hi@255kb.com</a>
     </p>
@@ -201,7 +152,7 @@
 </div>
 
 <footer class="section has-text-centered">
-  <h4 class="title title--medium title--underlined color-inverted is-5">Follow me</h4>
+  <h4 class="title title--medium title--underlined color-inverted is-5">{{text 'followTitle'}}</h4>
 
   <div class="social__container">
     <a href="https://github.com/255kb" target="_blank" title="Github" class="icon is-medium">
@@ -222,5 +173,4 @@
   </div>
 </footer>
 
-</body>
-</html>
+{{> footer}}
