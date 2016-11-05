@@ -40,8 +40,19 @@ gulp.task('compile', function () {
     //if page has multiple languages
     if (pageConfig.languages) {
       pageConfig.languages.forEach(function (pageLanguage) {
+
+        //build alternate languages urls array (for link rel=alternate)
+        let linkAlternate = pageConfig.languages.map(function (language) {
+          if (language !== pageLanguage) {
+            return {lang: language, url: `${mainConfig.domain}${page}/${language}/`};
+          }
+        });
+
+        console.log(linkAlternate)
+
         let pageData = {
           currentLang: pageLanguage,
+          linkAlternate,
           currentAbsoluteUrl: `${mainConfig.domain}${page}/${pageLanguage}/`,
           texts: pageTexts[pageLanguage]
         };
