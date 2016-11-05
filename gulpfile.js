@@ -12,18 +12,15 @@ let sourcePath = './src/';
 let buildPath = './build/';
 let pagesPath = './src/pages/';
 
-//load main config
-let mainConfig = require(sourcePath + 'main_config.json');
+gulp.task('compile', function () {
+  //load main config
+  let mainConfig = require(sourcePath + 'main_config.json');
 
-let getPages = function (dir) {
-  return fs.readdirSync(dir)
+  let pages = fs.readdirSync(pagesPath)
     .filter(function (file) {
       return fs.statSync(path.join(dir, file)).isDirectory();
     });
-};
-
-gulp.task('compile', function () {
-  let pages = getPages(pagesPath);
+  //add index page
   pages.push('.');
 
   let handlebarsOptions = {
@@ -61,7 +58,7 @@ gulp.task('compile', function () {
     } else {
       let pageData = {
         currentLang: 'en',
-        currentAbsoluteUrl: (page === '.') ? mainConfig.domain: `${mainConfig.domain}${page}/`,//if root index no page
+        currentAbsoluteUrl: (page === '.') ? mainConfig.domain : `${mainConfig.domain}${page}/`,//if root index no page
         texts: pageTexts
       };
 
@@ -76,7 +73,7 @@ gulp.task('compile', function () {
 });
 
 gulp.task('build-css', function () {
-    return gulp.src([sourcePath + 'style/build.scss'])
+  return gulp.src([sourcePath + 'style/build.scss'])
     .pipe(sass())
     .pipe(cleanCSS())
     .pipe(concat('style.css'))
