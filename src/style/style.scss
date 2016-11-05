@@ -12,6 +12,11 @@
     background-size: cover;
   }
 }
+.image {
+  &--bottom-margin {
+    margin-bottom: 20px;
+  }
+}
 
 /* mixins */
 @mixin underlined() {
@@ -51,9 +56,13 @@
   }
 }
 
-figure.image.centered {
+figure.image.image--centered {
   margin-left: auto;
   margin-right: auto;
+}
+
+.tagline {
+  font-style: italic;
 }
 
 /* Icon font */
