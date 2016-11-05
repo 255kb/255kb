@@ -26,13 +26,14 @@
 /* custom classes */
 .title--big, .title--medium {
   display: inline-block;
-
-  &::after {
-    @include underlined();
-  }
 }
 .title--big {
   font-weight: bold;
+}
+.title--underlined {
+  &::after {
+    @include underlined();
+  }
 }
 
 .color-inverted {
