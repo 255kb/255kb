@@ -48,8 +48,6 @@ gulp.task('compile', function () {
           }
         });
 
-        console.log(linkAlternate)
-
         let pageData = {
           currentLang: pageLanguage,
           linkAlternate,
