@@ -32,6 +32,11 @@ gulp.task('compile', function () {
     }
   };
 
+  let sitemapData = {
+    sitemapMultiLanguagesUrls: [],
+    sitemapUrls: []
+  };
+
   let pagesTasks = pages.map(function (page) {
     let pageTexts = require(pagesPath + page + '/texts.json');
     let pageConfig = require(pagesPath + page + '/config.json');
@@ -39,7 +44,11 @@ gulp.task('compile', function () {
 
     //if page has multiple languages
     if (pageConfig.languages) {
+      let multiLanguagesUrls = [];
+
       pageConfig.languages.forEach(function (pageLanguage) {
+        //add url to sitemapData
+        multiLanguagesUrls.push({lang: pageLanguage, url: `${mainConfig.domain}${page}/${pageLanguage}/`, isMainLang: pageLanguage === 'en'});
 
         //build alternate languages urls array (for link rel=alternate)
         let linkAlternate = pageConfig.languages.map(function (language) {
@@ -63,11 +72,20 @@ gulp.task('compile', function () {
         languageCompilationTasks.push(gulpTask);
       });
 
+      //add page urls language array
+      sitemapData.sitemapMultiLanguagesUrls.push({multiLanguagesUrls});
+
       return languageCompilationTasks;
     } else {
+      //create page url, if root index no page name
+      let pageUrl = (page === '.') ? mainConfig.domain : `${mainConfig.domain}${page}/`;
+
+      //add url to sitemapData
+      sitemapData.sitemapUrls.push({url: pageUrl});
+
       let pageData = {
         currentLang: 'en',
-        currentAbsoluteUrl: (page === '.') ? mainConfig.domain : `${mainConfig.domain}${page}/`,//if root index no page
+        currentAbsoluteUrl: pageUrl,
         texts: pageTexts
       };
 
@@ -78,7 +96,13 @@ gulp.task('compile', function () {
     }
   });
 
-  return merge(pagesTasks);
+  //create sitemap build task
+  let sitemapTask = (gulp.src(`${sourcePath}partials/sitemap.hbs`)
+    .pipe(handlebars(sitemapData, handlebarsOptions))
+    .pipe(rename('sitemap.xml'))
+    .pipe(gulp.dest(buildPath)));
+
+  return merge(pagesTasks, sitemapTask);
 });
 
 gulp.task('build-css', function () {
