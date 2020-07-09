@@ -9,7 +9,7 @@ I also deeply believe in the open-source movement and try to give back to the co
 
 I am currently working on [Mockoon](https://mockoon.com), a desktop API mocking application. It's the quickest and easiest way to create local mock servers. No account or remote deployment is needed. And it's open-source!
 
-![Application screenshot](banner_sm.jpg)
+![Application screenshot](https://github.com/255kb/255kb/blob/master/banner_sm.jpg)
 
 You can support my work on Mockoon by becoming a [sponsor](https://github.com/sponsors/255kb).
 
