@@ -7,7 +7,7 @@ I also deeply believe in the open-source movement and try to give back to the co
 
 ### My work 👨‍💻
 
-I am currently working on [Mockoon](https://mockoon.com), a desktop API mocking application. It's the quickest and easiest way to create a local [mock API](https://mockoon.com). No account or remote deployment is needed. And it's open-source!
+I am currently working full-time on [Mockoon](https://mockoon.com), a desktop API mocking application. It's the quickest and easiest way to create a local [mock API](https://mockoon.com). No account or remote deployment is needed. And it's open-source!
 
 ![Application screenshot](https://github.com/255kb/255kb/blob/master/banner_sm.jpg)
 
