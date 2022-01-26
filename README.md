@@ -11,7 +11,10 @@ I am currently working full-time on [Mockoon](https://mockoon.com), a desktop AP
 
 ![Application screenshot](https://github.com/255kb/255kb/blob/master/banner_sm.jpg)
 
-You can support my work on Mockoon by becoming a [sponsor](https://github.com/sponsors/255kb).
+You can support my work on Mockoon by becoming a sponsor: 
+<div align="center">
+<a href="https://github.com/sponsors/mockoon"><img src="https://mockoon.com/images/sponsor-btn.png" width="250" alt="sponsor button" /></a>
+</div>
 
 ### Get in touch ✉️
 
