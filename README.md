@@ -18,8 +18,13 @@ You can support my work on Mockoon by becoming a sponsor:
 <a href="https://github.com/sponsors/mockoon"><img src="https://mockoon.com/images/sponsor-btn.png" width="250" alt="sponsor button" /></a>
 </div>
 
+### Hire me as a freelancer 👷‍♂️
+
+Do you have a project? Do you need help with some complex CI configuration? You can [hire me as a freelancer](https://1kb.software/contact/). 
+My specialties include front-end (Angular, React), back-end (Node.js, Java, PHP), APIs, and various cloud services and CI tools configuration (Firebase, GCP, GitHub Actions, etc.). I can also give training mainly in Angular and APIs.
+
 ### Get in touch ✉️
 
 - On Twitter [@255kb](https://twitter.com/255kb)
-- By email [hi@255kb.dev](mailto:hi@255kb.dev)
+- By email [guillaume@1kb.software](mailto:guillaume@1kb.software)
 - On [LinkedIn](https://www.linkedin.com/in/guillaumemonnet/)
